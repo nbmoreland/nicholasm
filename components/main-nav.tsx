@@ -29,14 +29,14 @@ export function MainNav() {
       <motion.div
         whileTap={{ scale: 0.95 }}
         className={cn(
-          "flex items-center px-2 rounded-sm",
+          "flex items-center px-2 rounded-md",
           // light styles
           "hover:bg-gray-950/[.05]",
           // dark styles
           " dark:hover:bg-gray-50/[.10]"
         )}
       >
-        <Link href="/" className="relative flex items-center py-1 rounded-lg">
+        <Link href="/" className="relative flex items-center py-1">
           <Image
             src="https://avatars.githubusercontent.com/u/46201019?v=4"
             width={40}
@@ -49,12 +49,11 @@ export function MainNav() {
       </motion.div>
       <nav className="ml-2 hidden items-center space-x-2 font-medium md:flex">
         {config.nav.map((item) => (
-          <motion.div whileTap={{ scale: 0.95 }}>
+          <motion.div whileTap={{ scale: 0.95 }} key={item.href}>
             <Link
-              key={item.href}
               href={item.href!}
               className={cn(
-                "flex items-center justify-center transition-colors p-2 rounded-sm",
+                "flex items-center justify-center transition-colors p-2 rounded-md",
                 // light styles
                 "hover:bg-gray-950/[.05]",
                 // dark styles
