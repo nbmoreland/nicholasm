@@ -96,9 +96,8 @@ const tech = [
   },
 ];
 
-const firstThird = tech.slice(0, tech.length / 3);
-const secondThird = tech.slice(tech.length / 3, (2 * tech.length) / 3);
-const thirdThird = tech.slice((2 * tech.length) / 3);
+const firstSplit = tech.slice(0, tech.length / 2);
+const secondSplit = tech.slice(tech.length / 2);
 
 const TechCard = ({ svg, name }: { svg: any; name: string }) => {
   return (
@@ -121,18 +120,13 @@ const TechCard = ({ svg, name }: { svg: any; name: string }) => {
 export const MarqueeTechStack = () => {
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-20 ">
-      <Marquee pauseOnHover className="[--duration:15s]">
-        {firstThird.map((tech) => (
+      <Marquee pauseOnHover className="[--duration:20s]">
+        {firstSplit.map((tech) => (
           <TechCard key={tech.name} {...tech} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:15s]">
-        {secondThird.map((tech) => (
-          <TechCard key={tech.name} {...tech} />
-        ))}
-      </Marquee>
-      <Marquee pauseOnHover className="[--duration:15s]">
-        {thirdThird.map((tech) => (
+      <Marquee reverse pauseOnHover className="[--duration:20s]">
+        {secondSplit.map((tech) => (
           <TechCard key={tech.name} {...tech} />
         ))}
       </Marquee>

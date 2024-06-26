@@ -1,3 +1,7 @@
 export default function Work() {
-  return <h1>Work</h1>;
+  return (
+    <main className="container">
+      <h1>Heading</h1>
+    </main>
+  );
 }

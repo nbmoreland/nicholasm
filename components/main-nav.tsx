@@ -31,7 +31,7 @@ export function MainNav() {
         className={cn(
           "flex items-center px-2 rounded-md",
           // light styles
-          "hover:bg-gray-950/[.05]",
+          "hover:bg-gray-100",
           // dark styles
           " dark:hover:bg-gray-50/[.10]"
         )}
@@ -47,7 +47,7 @@ export function MainNav() {
           <span className="pl-1 leading-6 font-medium">Nicholas Moreland</span>
         </Link>
       </motion.div>
-      <nav className="ml-2 hidden items-center space-x-2 font-medium md:flex">
+      <nav className="ml-2 hidden items-center space-x-2 md:flex">
         {config.nav.map((item) => (
           <motion.div whileTap={{ scale: 0.95 }} key={item.href}>
             <Link
@@ -55,11 +55,11 @@ export function MainNav() {
               className={cn(
                 "flex items-center justify-center transition-colors p-2 rounded-md",
                 // light styles
-                "hover:bg-gray-950/[.05]",
+                "hover:bg-gray-100",
                 // dark styles
                 " dark:hover:bg-gray-50/[.10]",
                 pathname?.startsWith(item.href!)
-                  ? "text-foreground bg-gray-950/[.05] dark:bg-gray-50/[.10]"
+                  ? "text-foreground bg-gray-100 dark:bg-gray-50/[.10]"
                   : "text-foreground/60 hover:text-foreground"
               )}
             >
