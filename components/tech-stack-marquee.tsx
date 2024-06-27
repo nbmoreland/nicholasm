@@ -119,7 +119,7 @@ const TechCard = ({ svg, name }: { svg: any; name: string }) => {
 
 export const MarqueeTechStack = () => {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-20 ">
+    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-20">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstSplit.map((tech) => (
           <TechCard key={tech.name} {...tech} />

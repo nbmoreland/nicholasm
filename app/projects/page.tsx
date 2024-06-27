@@ -164,7 +164,7 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="space-y-4 py-8 max-w-[83rem] mx-auto">
+      <div className="space-y-4 pt-8 max-w-[83rem] mx-auto">
         {projects.map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
