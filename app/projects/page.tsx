@@ -136,7 +136,7 @@ export default function Projects() {
           Project Portfolio
         </h2>
         <p className="mt-6 text-lg leading-8 text-foreground">
-          Welcome to my professional playground! Here you'll find a curated
+          Welcome to my professional playground! Here you&apos;ll find a curated
           selection of my work. Please note that some projects remain
           confidential due to NDA restrictions.
         </p>
