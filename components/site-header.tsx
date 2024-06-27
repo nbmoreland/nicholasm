@@ -1,8 +1,8 @@
-import { Icons } from "@/components/icons";
 import { MainNav } from "@/components/main-nav";
 import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 export async function SiteHeader({}) {
@@ -25,7 +25,7 @@ export async function SiteHeader({}) {
                 "w-9 px-0"
               )}
             >
-              <Icons.gitHub className="h-5 w-5" />
+              <GitHubLogoIcon className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Link>
             <ModeToggle />

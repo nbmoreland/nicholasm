@@ -1,6 +1,11 @@
+import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 export type Project = {
@@ -96,15 +101,15 @@ const projects = [
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="py-6 lg:py-10 flex flex-col lg:flex-row gap-10 my-10 hover:bg-gray-100 dark:hover:bg-neutral-900 lg:p-6 rounded-3xl group cursor-pointer">
-      <div className="w-1/4">
+    <div className="pb-4 lg:py-4 flex flex-col lg:flex-row gap-12 hover:bg-gray-100 dark:hover:bg-neutral-900 lg:p-4 rounded-xl group cursor-pointer">
+      <div className="lg:w-1/3 px-4 lg:pl-0">
         <h2 className="font-bold text-2xl text-neutral-900 dark:text-neutral-300">
           {project.name}
         </h2>
-        <p className="text-sm text-neutral-600 dark:text-neutral-200 lg:max-w-xs mt-4 leading-6">
+        <p className="text-sm text-neutral-600 dark:text-neutral-200 lg:max-w-xs mt-2 leading-6">
           {project.description}
         </p>
-        <div className="flex flex-col lg:flex-row mt-2">
+        <div className="flex flex-col md:flex-row mt-2">
           {project.tags.map((tag) => (
             <span key={tag} className="mr-2">
               <Badge>{tag}</Badge>
@@ -114,12 +119,22 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <div className="h-[2px] rounded-full w-10 my-4 bg-gray-200 dark:bg-neutral-700"></div>
         <p className=" text-neutral-700 dark:text-neutral-300 flex items-center space-x-1 w-fit text-sm font-normal rounded-md">
           <span>View Project</span>
-          <ChevronRightIcon className="h-4 w-4" />
+          <ChevronRightIcon className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </p>
       </div>
 
-      <div className="flex order-first lg:order-last flex-col mt-4 lg:mt-0  flex-1 ">
-        <Image src={project.screenshots[0]} alt={project.name} />
+      <div className="flex order-first lg:order-last flex-col lg:mt-0 flex-1 bg-red-500">
+        <div className="relative rounded-md">
+          <AspectRatio ratio={16 / 9} className="bg-muted">
+            <Image
+              src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+              alt="Photo by Drew Beamer"
+              fill
+              className="rounded-md object-cover shadow-lg"
+            />
+          </AspectRatio>
+          <BorderBeam size={300} borderWidth={2} />
+        </div>
       </div>
     </div>
   );
@@ -128,10 +143,17 @@ const ProjectCard = ({ project }: { project: Project }) => {
 export default function Projects() {
   return (
     <main className="container">
-      <div className="mx-auto max-w-2xl text-center pt-8">
-        <p className="text-base font-semibold leading-7 text-indigo-600 dark:text-indigo-400">
-          Get the help you need
-        </p>
+      <div className="mx-auto max-w-2xl text-center pt-6">
+        <AnimatedGradientText>
+          🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
+          <span
+            className={cn(
+              `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+            )}
+          >
+            Beta Launch
+          </span>
+        </AnimatedGradientText>
         <h2 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
           Project Portfolio
         </h2>
@@ -142,7 +164,7 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="space-y-8 pb-8 max-w-[83rem] mx-auto">
+      <div className="space-y-4 py-8 max-w-[83rem] mx-auto">
         {projects.map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
