@@ -35,6 +35,16 @@ const jobs = [
     href: "https://www.nagarro.com/",
   },
   {
+    company: "Aflac",
+    role: "Software Engineer",
+    startDate: "June 2022",
+    endDate: "August 2022",
+    description:
+      "Developed a web application for Aflac using React, Redux, and TypeScript.",
+    logo: "/aflac.png",
+    href: "https://www.aflac.com/",
+  },
+  {
     company: "National Science Foundation",
     role: "Software Engineer",
     startDate: "June 2022",
@@ -52,8 +62,8 @@ const JobCard = ({ job }: { job: Job }) => {
       <Image
         src={job.logo}
         alt={job.company}
-        width={46}
-        height={46}
+        width={50}
+        height={50}
         className="rounded-full"
       />
       <div className="flex flex-col ml-4">
