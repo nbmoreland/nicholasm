@@ -1,5 +1,83 @@
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
+
+export type Job = {
+  company: string;
+  role: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  logo: string;
+  href: string;
+};
+
+const jobs = [
+  {
+    company: "Nagarro",
+    role: "Software Engineer",
+    startDate: "June 2024",
+    endDate: "Present",
+    description:
+      "Worked on a project that involved developing a web application for a client using React, Redux, and TypeScript.",
+    logo: "/nagarro.svg",
+    href: "https://www.nagarro.com/",
+  },
+  {
+    company: "Nagarro",
+    role: "Software Engineer",
+    startDate: "June 2023",
+    endDate: "August 2023",
+    description:
+      "Worked on a project that involved developing a web application for a client using React, Redux, and TypeScript.",
+    logo: "/nagarro.svg",
+    href: "https://www.nagarro.com/",
+  },
+  {
+    company: "National Science Foundation",
+    role: "Software Engineer",
+    startDate: "June 2022",
+    endDate: "August 2022",
+    description:
+      "Developed a web application for the National Science Foundation using React, Redux, and TypeScript.",
+    logo: "/nsf.svg",
+    href: "https://www.nsf.gov/",
+  },
+];
+
+const JobCard = ({ job }: { job: Job }) => {
+  return (
+    <div className="flex flex-row cursor-pointer group">
+      <Image
+        src={job.logo}
+        alt={job.company}
+        width={46}
+        height={46}
+        className="rounded-full"
+      />
+      <div className="flex flex-col ml-4">
+        <div className="flex flex-row items-center">
+          <h2 className="font-semibold text-lg text-foreground mr-1">
+            {job.company}
+          </h2>
+          <ChevronRightIcon className="hidden group-hover:block h-4 w-4 transition-transform duration-300 ease-in-out" />
+        </div>
+
+        <p className="text-sm text-foreground">{job.role}</p>
+      </div>
+
+      <div className="flex-grow" />
+      <div>
+        <p className="text-foreground items-center space-x-1 text-sm font-normal">
+          <span>
+            {job.startDate} - {job.endDate}
+          </span>
+        </p>
+      </div>
+    </div>
+  );
+};
 
 export default function Work() {
   return (
@@ -24,7 +102,11 @@ export default function Work() {
         </p>
       </div>
 
-      <div className="space-y-8 pb-8 max-w-[83rem] mx-auto"></div>
+      <div className="space-y-8 mt-16 px-32 max-w-[83rem] mx-auto">
+        {jobs.map((job) => (
+          <JobCard key={job.company} job={job} />
+        ))}
+      </div>
     </main>
   );
 }
