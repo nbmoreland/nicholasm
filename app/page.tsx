@@ -8,13 +8,13 @@ export default function Home() {
           <div className="flex-col flex flex-1 space-y-1.5">
             <div className="flex">
               <span className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                Hi, I'm Nicholas 👋
+                Hi, I&apos;m Nicholas 👋
               </span>
             </div>
             <div className="flex">
               <span className="inline-block max-w-[600px] md:text-xl">
-                I'm a software engineer who loves building products that
-                simplify people's lives.
+                I&apos;m a software engineer who loves building products that
+                simplify people&apos;s lives.
               </span>
             </div>
           </div>
