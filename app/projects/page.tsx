@@ -1,11 +1,8 @@
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
-import { BorderBeam } from "@/components/magicui/border-beam";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 export type Project = {
@@ -133,7 +130,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
               className="rounded-md object-cover shadow-lg"
             />
           </AspectRatio>
-          <BorderBeam size={300} borderWidth={2} />
         </div>
       </div>
     </div>
