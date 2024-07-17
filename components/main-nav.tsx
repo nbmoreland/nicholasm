@@ -38,7 +38,7 @@ export function MainNav() {
       >
         <Link href="/" className="relative flex items-center py-1">
           <Image
-            src="https://avatars.githubusercontent.com/u/46201019?v=4"
+            src="/me.jpeg"
             width={40}
             height={40}
             alt="Nicholas"
